@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+{% block titulo_conteudo %} Novo Pedido {% endblock titulo_conteudo %}
+
+
+{% block conteudo %} 
+
+
+
+
+<form method="post">
+    {% csrf_token %}    
+
+    <p>
+        <label>Cliente:</label>
+        <span class="form-control" readonly>{{ item.pedido.cliente.nome }}</span>
+    </p>
+
+    <p>
+        <label>Produto:</label>
+        <span class="form-control" readonly>{{ item.produto.nome }}</span>
+    </p>
+  
+    <p>
+        <label>Status do Pedido:</label>
+        <span class="form-control" readonly>{{ item.pedido.get_status_display }}</span>
+    </p>    
+
+    <p>
+        <label for="{{ form.qtde.id_for_label }}">Quantidade:</label>
+        {{ form.qtde }}
+        {% if form.qtde.errors %}
+            <div class="text-danger">{{ form.qtde.errors }}</div>
+        {% endif %}
+    </p>
+    
+    <div style="display:none">
+        {{ form.produto }}
+        {{ form.pedido }}
+    </div>
+
+    <button class="btn btn-primary btn-sm" type="submit">Salvar Alterações</button>
+    <a href="{% url 'detalhes_pedido' item.pedido.id %}" class="btn btn-secondary btn-sm">Cancelar</a>
+</form>
+
+
+
+
+{% endblock conteudo %}
+
+
+{% block javascript %}
+
+
+{% endblock javascript %}
