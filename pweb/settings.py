@@ -80,6 +80,10 @@ WSGI_APPLICATION = 'pweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+DATABASES = {
+   'default': dj_database_url.parse("postgresql://neondb_owner:npg_x5GHcwOLU4je@ep-red-sun-ackcq1nx-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require")
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
