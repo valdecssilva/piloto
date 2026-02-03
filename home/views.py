@@ -209,13 +209,13 @@ def ajustar_estoque(request, id):
 
 
 # View de teste1
-@login_required
-def teste1(request):
-    return render(request,'testes/teste1.html')
+#@login_required
+#def teste1(request):
+#    return render(request,'testes/teste1.html')
 # View de teste2
-@login_required
-def teste2(request):
-    return render(request, 'testes/teste2.html')
+#@login_required
+#def teste2(request):
+#    return render(request, 'testes/teste2.html')
 
 # View para busca genérica de dados (autocomplete)
 @login_required
